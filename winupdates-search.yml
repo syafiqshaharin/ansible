@@ -1,0 +1,13 @@
+- name: Windows Update - Search
+  hosts: all
+  connection: winrm
+
+  tasks:
+  - win_updates:
+      category_names:
+      - SecurityUpdates
+      - CriticalUpdates
+      - UpdateRollups
+      state: searched
+      log_path: C:\ansible_wu.txt
+
